@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To-Do App | Charan</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <header>
+    <nav>
+      <h1>To-Do List</h1>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Product Page</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero" style="background-image: url('assets/images/todo-banner.jpg'); background-size: cover; background-position: center; padding: 5rem 2rem;">
+    <h2 style="color:#ff4242; font-size:2.5rem;">🧠 Plan It. Do It.</h2>
+    <p style="color:#040303; font-size:1.2rem;">Your personal, sleek and glowing task manager.</p>
+  </section>
+
+  <main class="todo-container fade-in">
+    <div class="card" style="max-width: 700px; margin: auto;">
+      <h3 style="color:#00ffcc; font-size:1.8rem;">Today's Tasks</h3>
+      <div class="todo-input" style="display: flex; gap: 1rem; margin-top: 1.5rem;">
+        <input id="taskInput" type="text" placeholder="Add a new task..." style="flex: 1; font-size: 1.1rem;" />
+        <button onclick="addTask()">Add</button>
+      </div>
+      <ul id="taskList" class="todo-list" style="margin-top: 2rem;"></ul>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2025 Charan. Stay productive 🔥</p>
+  </footer>
+
+  <script src="js/todo.js"></script>
+</body>
+</html>
