@@ -1,0 +1,313 @@
+/* ========== GLOBAL RESET & BASE ========== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(145deg, #0f0f0f, #0a0a0a);
+  color: #e0e0e0;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  overflow-x: hidden;
+}
+
+/* ========== SCROLLBAR ========== */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #111;
+}
+::-webkit-scrollbar-thumb {
+  background: #00ffcc;
+  border-radius: 10px;
+}
+
+/* ========== HEADER / NAVBAR ========== */
+header, nav {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: rgba(15, 15, 15, 0.85);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  border-bottom: 1px solid #00ffcc33;
+  box-shadow: 0 0 20px #00ffcc44;
+}
+
+
+header h1, nav h1 {
+  color: #00ffcc;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+}
+
+nav a {
+  margin-left: 2rem;
+  color: #e0e0e0;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+}
+
+nav a:hover {
+  color: #00ffcc;
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #00ffcc;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+nav a:hover::after {
+  transform: scaleX(1);
+}
+
+/* ========== HERO SECTION (Portfolio Only) ========== */
+.hero {
+  text-align: center;
+  padding: 6rem 2rem;
+  background: radial-gradient(circle at center, #00ffcc11 0%, transparent 100%);
+}
+.hero h2 {
+  font-size: 3rem;
+  color: #00ffcc;
+  text-shadow: 0 0 12px #00ffcc88;
+}
+.hero p {
+  color: #ccc;
+  max-width: 700px;
+  margin: 0.5rem auto;
+  font-size: 1.15rem;
+}
+
+/* ========== SECTION LAYOUTS ========== */
+.section {
+  padding: 4rem 2rem;
+  max-width: 1100px;
+  margin: auto;
+}
+.section h2 {
+  font-size: 2.5rem;
+  color: #00ffcc;
+  margin-bottom: 1.2rem;
+  text-shadow: 0 0 8px #00ffcc66;
+  border-bottom: 2px solid #00ffcc44;
+  display: inline-block;
+}
+.section ul {
+  padding-left: 1.5rem;
+}
+.section li {
+  margin-bottom: 0.8rem;
+}
+
+/* ========== GRID + CARDS ========== */
+.grid,
+.todo-list,
+.product-grid,
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.card,
+.todo-item,
+.product-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  border-radius: 15px;
+  padding: 1.5rem;
+  text-align: center;
+  box-shadow: 0 0 15px #00ffcc22;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover,
+.todo-item:hover,
+.product-card:hover {
+  transform: translateY(-5px) scale(1.02);
+  box-shadow: 0 0 25px #00ffcc55;
+}
+
+.card h3, .card h4, .product-card h4 {
+  color: #00ffcc;
+  margin-bottom: 0.5rem;
+}
+
+.card p, .product-card p {
+  color: #ccc;
+  font-size: 0.95rem;
+}
+
+/* ========== BUTTONS ========== */
+.btn,
+button,
+.todo-input button {
+  background: #00ffcc;
+  color: #000;
+  padding: 0.5rem 1rem; /* reduced padding */
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-top: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.project-btn {
+  padding: 0.4rem 0.9rem;
+  font-size: 0.9rem;
+  border-radius: 6px;
+}
+
+.btn:hover,
+button:hover {
+  background: #00e6b8;
+}
+
+/* ========== FORM STYLING ========== */
+form {
+  max-width: 600px;
+  margin: auto;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 0 20px #00ffcc40;
+}
+form input,
+form textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 1rem;
+  background: #111;
+  border: none;
+  border-radius: 8px;
+  color: #00ffcc;
+  font-size: 1rem;
+  outline: none;
+}
+
+/* ========== TO-DO PAGE EXTRAS ========== */
+.todo-container {
+  padding: 3rem 2rem;
+}
+
+.todo-input {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+.todo-input input {
+  background: #1a1a1a;
+  color: #00ffcc;
+}
+.todo-list li {
+  list-style: none;
+}
+.todo-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.todo-list li {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 1rem 1.2rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #00ffcc33;
+  color: #e0e0e0;
+  font-size: 1.1rem;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.todo-list li:hover {
+  background: #111;
+  box-shadow: 0 0 18px #00ffcc88;
+  transform: scale(1.02);
+}
+
+.todo-input input {
+  background: #111;
+  padding: 0.8rem;
+  border: none;
+  border-radius: 8px;
+  color: #00ffcc;
+  font-size: 1.05rem;
+}
+
+.todo-input button {
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+}
+nav ul {
+  list-style: none;         
+  display: flex;            
+  gap: 2rem;               
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+/* ========== PRODUCT PAGE EXTRAS ========== */
+.filters,
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+.controls input,
+.controls select {
+  background: #111;
+  color: #00ffcc;
+  border: none;
+  padding: 0.7rem;
+  border-radius: 8px;
+}
+
+/* ========== FOOTER ========== */
+footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.95rem;
+  color: #888;
+  background: #0a0a0a;
+  border-top: 1px solid #00ffcc33;
+  margin-top: 4rem;
+}
+
+/* ========== ANIMATIONS ========== */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
